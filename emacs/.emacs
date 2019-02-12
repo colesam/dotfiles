@@ -53,6 +53,7 @@ There are two things you can do about this warning:
 
 ;;;;Org mode configuration
 ;; Enable Org mode
+(setq org-startup-indented t)
 (require 'org)
 ;; Make Org mode work with files ending in .org
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
