@@ -17,6 +17,9 @@ There are two things you can do about this warning:
     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 
+;; Relative Line Numbers
+(require 'linum-relative)
+
 ;; Ace Jump Mode
 (autoload
  	'ace-jump-mode
@@ -44,6 +47,7 @@ There are two things you can do about this warning:
 ;; line wrap
 (global-visual-line-mode 1)
 (global-linum-mode 1)
+(linum-relative-on)
 (setq linum-relative-current-symbol "")
 
 (setq indent-tabs-mode t)
@@ -96,7 +100,7 @@ There are two things you can do about this warning:
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(package-selected-packages
    (quote
-    (ace-jump-mode key-chord evil use-package js3-mode solarized-theme ## js2-mode))))
+    (linum-relative ace-jump-mode key-chord evil use-package js3-mode solarized-theme ## js2-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
