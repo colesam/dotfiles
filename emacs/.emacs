@@ -17,12 +17,22 @@ There are two things you can do about this warning:
     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 
-;; not installed with package-install so need to link manually
+;; Ace Jump Mode
+(autoload
+ 	'ace-jump-mode
+	"ace-jump-mode"
+	"Emacs quick move minor mode"
+	t)
+
+
+;; Evil Org Mode (pulled manually with git)
 (add-to-list 'load-path "~/.emacs.d/plugins/evil-org")
 (require 'evil-org)
 (add-hook 'org-mode-hook 'evil-org-mode)
 (evil-org-set-key-theme '(navigation insert textobjects additional calendar))
+(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
 
+;; Evil Mode
 (require 'evil)
 (evil-mode 1)
 
@@ -86,7 +96,7 @@ There are two things you can do about this warning:
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(package-selected-packages
    (quote
-    (key-chord evil use-package js3-mode solarized-theme ## js2-mode))))
+    (ace-jump-mode key-chord evil use-package js3-mode solarized-theme ## js2-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
