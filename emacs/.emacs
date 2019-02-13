@@ -18,7 +18,8 @@ There are two things you can do about this warning:
 (package-initialize)
 
 ;; line wrap
-(global-visual-line-mode 1) 
+(global-visual-line-mode 1)
+(global-linum-mode 1)
 (setq linum-relative-current-symbol "")
 
 ;; tabs
