@@ -17,7 +17,12 @@ There are two things you can do about this warning:
     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 
-(add-to-list 'load-path "~/.emacs.d/evil")
+;; not installed with package-install so need to link manually
+(add-to-list 'load-path "~/.emacs.d/plugins/evil-org")
+(require 'evil-org)
+(add-hook 'org-mode-hook 'evil-org-mode)
+(evil-org-set-key-theme '(navigation insert textobjects additional calendar))
+
 (require 'evil)
 (evil-mode 1)
 
@@ -31,7 +36,6 @@ There are two things you can do about this warning:
 (global-linum-mode 1)
 (setq linum-relative-current-symbol "")
 
-;; tabs
 (setq indent-tabs-mode t)
 (setq tab-width 4)
 
