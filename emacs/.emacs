@@ -17,6 +17,15 @@ There are two things you can do about this warning:
     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 
+(add-to-list 'load-path "~/.emacs.d/evil")
+(require 'evil)
+(evil-mode 1)
+
+;; evil mode requires installing key-chord
+(setq key-chord-two-keys-delay 0.5)
+(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+(key-chord-mode 1)
+
 ;; line wrap
 (global-visual-line-mode 1)
 (global-linum-mode 1)
@@ -71,7 +80,9 @@ There are two things you can do about this warning:
  '(custom-safe-themes
    (quote
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
- '(package-selected-packages (quote (js3-mode solarized-theme ## js2-mode))))
+ '(package-selected-packages
+   (quote
+    (key-chord evil use-package js3-mode solarized-theme ## js2-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
