@@ -17,7 +17,9 @@ There are two things you can do about this warning:
     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 
-
+;; line wrap
+(global-visual-line-mode 1) 
+(setq linum-relative-current-symbol "")
 
 ;; tabs
 (setq indent-tabs-mode t)
