@@ -34,6 +34,10 @@ There are two things you can do about this warning:
 (add-hook 'org-mode-hook 'evil-org-mode)
 (evil-org-set-key-theme '(navigation insert textobjects additional calendar))
 (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
+(setq org-todo-keyword-faces
+ 	'(
+		("READY" . (:foreground "orange" :weight bold))
+	))
 
 ;; Evil Mode
 (require 'evil)
@@ -101,9 +105,20 @@ There are two things you can do about this warning:
  '(package-selected-packages
    (quote
     (linum-relative ace-jump-mode key-chord evil use-package js3-mode solarized-theme ## js2-mode))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#002b36" :foreground "#839496" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :foundry "PfEd" :family "Hack")))))
+
+
+(custom-theme-set-faces
+   'user
+   `(org-level-1 ((t (:family "Hack"))))
+   `(org-level-2 ((t (:family "Hack"))))
+   `(org-level-3 ((t (:family "Hack"))))
+   `(org-level-4 ((t (:family "Hack"))))
+   `(org-level-5 ((t (:family "Hack"))))
+   `(org-level-6 ((t (:family "Hack"))))
+   `(org-level-7 ((t (:family "Hack"))))
+   `(org-level-8 ((t (:family "Hack"))))
+   `(org-document-title ((t (:family "Hack")))))
+
+
+(add-to-list 'default-frame-alist '(font . "Hack" ))
+(set-face-attribute 'default t :font "Hack" )
