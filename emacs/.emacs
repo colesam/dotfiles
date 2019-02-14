@@ -40,7 +40,15 @@ There are two things you can do about this warning:
 (use-package tern
   :ensure t)
 
-;; Emmet
+(use-package sass-mode
+  :ensure t)
+
+
+;; ##### Sass #####
+(add-to-list 'auto-mode-alist '("\\.scss" . sass-mode))
+
+
+;; ##### Emmet #####
 (add-hook 'sgml-mode-hook 'emmet-html-mode-hook)
 (add-hook 'html-mode-hook 'emmet-html-mode-hook)
 (add-hook 'css-mode-hook 'emmet-css-mode-hook)
@@ -52,6 +60,43 @@ There are two things you can do about this warning:
 (defun emmet-css-mode-hook ()
   (emmet-mode)
   (ac-emmet-css-setup))
+
+
+;; ##### Web Mode #####
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.gotmpl\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.eex\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.xml\\'" . web-mode))
+
+
+;; ##### JavaScript #####
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(setq js2-strict-missing-semi-warning nil)
+
+;(add-to-list 'load-path "~/Development/tools/tern/emacs/")
+;(autoload 'tern-mode "tern.el" nil t)
+(add-hook 'js2-mode-hook
+          '(lambda ()
+		(tern-mode t)
+		(flymake-mode t)
+
+		(setq js2-basic-offset 4)
+		(setq js2-bounce-indent-p t)
+		(setq js2-mirror-mode t)))
+
+		;; Looks like these are used for js-comint
+		;(local-set-key "\C-x\C-e" 'js-send-last-sexp)
+		;(local-set-key "\C-\M-x" 'js-send-last-sexp-and-go)
+		;(local-set-key "\C-cb" 'js-send-buffer)
+		;(local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
+		;(local-set-key "\C-cl" 'js-load-file-and-go)))
 
 
 ;; Relative Line Numbers
@@ -143,7 +188,7 @@ There are two things you can do about this warning:
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(package-selected-packages
    (quote
-    (vue-html-mode company-lsp lsp-ui flycheck lsp-mode linum-relative ace-jump-mode key-chord evil use-package solarized-theme))))
+    (sass-mode tern emmet-mode web-mode vue-mode vue-html-mode linum-relative ace-jump-mode key-chord evil use-package js3-mode solarized-theme ## js2-mode))))
 
 
 (custom-theme-set-faces
