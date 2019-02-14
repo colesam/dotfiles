@@ -22,23 +22,41 @@ There are two things you can do about this warning:
 (eval-when-compile
   (require 'use-package))
 
-(use-package lsp-mode
+(use-package vue-html-mode
   :ensure t)
 
-(use-package lsp-ui
+(use-package vue-mode
   :ensure t)
 
-(use-package flycheck
+(use-package web-mode
   :ensure t)
 
-(use-package company-lsp
+(use-package emmet-mode
   :ensure t)
 
-(use-package ace-jump-mode
+(use-package js2-mode
   :ensure t)
+
+(use-package tern
+  :ensure t)
+
+;; Emmet
+(add-hook 'sgml-mode-hook 'emmet-html-mode-hook)
+(add-hook 'html-mode-hook 'emmet-html-mode-hook)
+(add-hook 'css-mode-hook 'emmet-css-mode-hook)
+
+(defun emmet-html-mode-hook ()
+  (emmet-mode)
+  (ac-emmet-html-setup))
+
+(defun emmet-css-mode-hook ()
+  (emmet-mode)
+  (ac-emmet-css-setup))
+
 
 ;; Relative Line Numbers
 (require 'linum-relative)
+
 
 ;; Ace Jump Mode
 (autoload
@@ -125,7 +143,7 @@ There are two things you can do about this warning:
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(package-selected-packages
    (quote
-    (company-lsp lsp-ui flycheck lsp-mode linum-relative ace-jump-mode key-chord evil use-package solarized-theme))))
+    (vue-html-mode company-lsp lsp-ui flycheck lsp-mode linum-relative ace-jump-mode key-chord evil use-package solarized-theme))))
 
 
 (custom-theme-set-faces

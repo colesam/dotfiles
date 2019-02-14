@@ -1,3 +1,5 @@
+;; From this reddit thread: https://old.reddit.com/r/vuejs/comments/7dg1nb/how_do_you_set_up_emacs_to_develop_with_vue/
+
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (defvar sr-speedbar-window nil)
 (defvar *aquamacs-p* (boundp 'aquamacs-version))
