@@ -17,6 +17,26 @@ There are two things you can do about this warning:
     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 
+
+;; Package Auto Installations
+(eval-when-compile
+  (require 'use-package))
+
+(use-package lsp-mode
+  :ensure t)
+
+(use-package lsp-ui
+  :ensure t)
+
+(use-package flycheck
+  :ensure t)
+
+(use-package company-lsp
+  :ensure t)
+
+(use-package ace-jump-mode
+  :ensure t)
+
 ;; Relative Line Numbers
 (require 'linum-relative)
 
@@ -105,7 +125,7 @@ There are two things you can do about this warning:
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(package-selected-packages
    (quote
-    (linum-relative ace-jump-mode key-chord evil use-package solarized-theme))))
+    (company-lsp lsp-ui flycheck lsp-mode linum-relative ace-jump-mode key-chord evil use-package solarized-theme))))
 
 
 (custom-theme-set-faces
@@ -123,3 +143,19 @@ There are two things you can do about this warning:
 
 (add-to-list 'default-frame-alist '(font . "Hack" ))
 (set-face-attribute 'default t :font "Hack" )
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-document-title ((t (:family "Hack"))))
+ '(org-level-1 ((t (:family "Hack"))))
+ '(org-level-2 ((t (:family "Hack"))))
+ '(org-level-3 ((t (:family "Hack"))))
+ '(org-level-4 ((t (:family "Hack"))))
+ '(org-level-5 ((t (:family "Hack"))))
+ '(org-level-6 ((t (:family "Hack"))))
+ '(org-level-7 ((t (:family "Hack"))))
+ '(org-level-8 ((t (:family "Hack")))))
+
+
