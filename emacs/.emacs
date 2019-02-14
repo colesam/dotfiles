@@ -29,6 +29,7 @@ There are two things you can do about this warning:
 
 
 ;; Evil Org Mode (pulled manually with git)
+;; https://github.com/Somelauw/evil-org-mode.git 
 (add-to-list 'load-path "~/.emacs.d/plugins/evil-org")
 (require 'evil-org)
 (add-hook 'org-mode-hook 'evil-org-mode)
@@ -104,7 +105,7 @@ There are two things you can do about this warning:
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(package-selected-packages
    (quote
-    (linum-relative ace-jump-mode key-chord evil use-package js3-mode solarized-theme ## js2-mode))))
+    (linum-relative ace-jump-mode key-chord evil use-package solarized-theme))))
 
 
 (custom-theme-set-faces
