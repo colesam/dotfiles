@@ -22,6 +22,11 @@ There are two things you can do about this warning:
 (eval-when-compile
   (require 'use-package))
 
+(use-package evil
+  :ensure t
+  :init
+  (evil-mode))
+
 (use-package vue-html-mode
   :ensure t)
 
@@ -42,6 +47,17 @@ There are two things you can do about this warning:
 
 (use-package sass-mode
   :ensure t)
+
+(use-package company
+  :ensure t)
+
+(use-package company-tern
+  :ensure t)
+
+
+;; ##### General Auto-Complete #####
+(setq company-idle-delay t)
+(global-company-mode t)
 
 
 ;; ##### Sass #####
@@ -80,23 +96,28 @@ There are two things you can do about this warning:
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (setq js2-strict-missing-semi-warning nil)
 
-;(add-to-list 'load-path "~/Development/tools/tern/emacs/")
-;(autoload 'tern-mode "tern.el" nil t)
+;; Tern Mode
+; See: http://ternjs.net/doc/manual.html#emacs
+; Installation: run npm install -g tern
+; Shortcuts:
+;   M-. jump to definition
+;   M-, go back
+;   C-c C-r rename variable under the cursor
+;   C-c C-c find the type of thing under the cursor
+
+; M-. conflicts with evil mode repeat, temporary fix until I start use .
+(define-key evil-normal-state-map (kbd "M-.") nil)
+
 (add-hook 'js2-mode-hook
           '(lambda ()
 		(tern-mode t)
-		(flymake-mode t)
+		;(flymake-mode t)
+		(electric-pair-mode t)
 
 		(setq js2-basic-offset 4)
-		(setq js2-bounce-indent-p t)
-		(setq js2-mirror-mode t)))
+		(setq js2-bounce-indent-p t)))
 
-		;; Looks like these are used for js-comint
-		;(local-set-key "\C-x\C-e" 'js-send-last-sexp)
-		;(local-set-key "\C-\M-x" 'js-send-last-sexp-and-go)
-		;(local-set-key "\C-cb" 'js-send-buffer)
-		;(local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
-		;(local-set-key "\C-cl" 'js-load-file-and-go)))
+(add-to-list 'company-backends 'company-tern)
 
 
 ;; Relative Line Numbers
@@ -122,10 +143,6 @@ There are two things you can do about this warning:
  	'(
 		("READY" . (:foreground "orange" :weight bold))
 	))
-
-;; Evil Mode
-(require 'evil)
-(evil-mode 1)
 
 ;; evil mode requires installing key-chord
 (setq key-chord-two-keys-delay 0.5)
