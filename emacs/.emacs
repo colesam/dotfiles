@@ -10,13 +10,28 @@ There are two things you can do about this warning:
 1. Install an Emacs version that does support SSL and be safe.
 2. Remove this warning from your init file so you won't see it again."))
   ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
-  ;; (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
-  (add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
-  (when (< emacs-major-version 24)
-    ;; For important compatibility libraries like cl-lib
-    (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
+  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+  (add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t))
 (package-initialize)
 
+;; Straight Use Package Bootstrap
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+
+(straight-use-package 'use-package)
+(setq straight-use-package-by-default t)
+
+(straight-use-package '(mmm-mode :host github :repo "purcell/mmm-mode"))
 
 ;; Package Auto Installations
 (eval-when-compile
@@ -27,13 +42,19 @@ There are two things you can do about this warning:
   :init
   (evil-mode))
 
-(use-package vue-html-mode
+(use-package evil-org
   :ensure t)
 
 (use-package vue-mode
   :ensure t)
 
+(use-package vue-html-mode
+  :ensure t)
+
 (use-package web-mode
+  :ensure t)
+
+(use-package mmm-mode
   :ensure t)
 
 (use-package emmet-mode
@@ -45,8 +66,10 @@ There are two things you can do about this warning:
 (use-package tern
   :ensure t)
 
-(use-package sass-mode
-  :ensure t)
+(use-package scss-mode
+  :ensure t
+  :init
+  (setq scss-compile-at-save nil))
 
 (use-package company
   :ensure t)
@@ -54,14 +77,27 @@ There are two things you can do about this warning:
 (use-package company-tern
   :ensure t)
 
+(use-package linum-relative
+  :ensure t)
+
+(use-package ace-jump-mode
+  :ensure t)
+
+(use-package key-chord
+  :ensure t
+  :init
+  (setq key-chord-two-keys-delay 0.5)
+  (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+  (key-chord-mode t))
+
 
 ;; ##### General Auto-Complete #####
 (setq company-idle-delay t)
 (global-company-mode t)
 
 
-;; ##### Sass #####
-(add-to-list 'auto-mode-alist '("\\.scss" . sass-mode))
+;; ##### SCSS #####
+(add-to-list 'auto-mode-alist '("\\.scss" . scss-mode))
 
 
 ;; ##### Emmet #####
@@ -105,23 +141,18 @@ There are two things you can do about this warning:
 ;   C-c C-r rename variable under the cursor
 ;   C-c C-c find the type of thing under the cursor
 
-; M-. conflicts with evil mode repeat, temporary fix until I start use .
+; M-. conflicts with evil mode repeat, temporary fix until I feel I need vim's .
 (define-key evil-normal-state-map (kbd "M-.") nil)
 
 (add-hook 'js2-mode-hook
           '(lambda ()
 		(tern-mode t)
-		;(flymake-mode t)
 		(electric-pair-mode t)
 
 		(setq js2-basic-offset 4)
 		(setq js2-bounce-indent-p t)))
 
 (add-to-list 'company-backends 'company-tern)
-
-
-;; Relative Line Numbers
-(require 'linum-relative)
 
 
 ;; Ace Jump Mode
@@ -134,20 +165,9 @@ There are two things you can do about this warning:
 
 ;; Evil Org Mode (pulled manually with git)
 ;; https://github.com/Somelauw/evil-org-mode.git 
-(add-to-list 'load-path "~/.emacs.d/plugins/evil-org")
-(require 'evil-org)
 (add-hook 'org-mode-hook 'evil-org-mode)
 (evil-org-set-key-theme '(navigation insert textobjects additional calendar))
 (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
-(setq org-todo-keyword-faces
- 	'(
-		("READY" . (:foreground "orange" :weight bold))
-	))
-
-;; evil mode requires installing key-chord
-(setq key-chord-two-keys-delay 0.5)
-(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
-(key-chord-mode 1)
 
 ;; line wrap
 (global-visual-line-mode 1)
@@ -193,7 +213,13 @@ There are two things you can do about this warning:
 ;; Make Org mode work with files ending in .org
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (setq org-todo-keywords
-      '((sequence "TODO" "WAITING" "DONE")))
+      '((sequence "TODO" "IN-PROGRESS" "DONE")))
+
+(setq org-todo-keyword-faces
+ 	'(
+		("IN-PROGRESS" . (:foreground "yellow" :weight bold))
+		("READY" . (:foreground "orange" :weight bold))
+	))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -223,19 +249,3 @@ There are two things you can do about this warning:
 
 (add-to-list 'default-frame-alist '(font . "Hack" ))
 (set-face-attribute 'default t :font "Hack" )
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-document-title ((t (:family "Hack"))))
- '(org-level-1 ((t (:family "Hack"))))
- '(org-level-2 ((t (:family "Hack"))))
- '(org-level-3 ((t (:family "Hack"))))
- '(org-level-4 ((t (:family "Hack"))))
- '(org-level-5 ((t (:family "Hack"))))
- '(org-level-6 ((t (:family "Hack"))))
- '(org-level-7 ((t (:family "Hack"))))
- '(org-level-8 ((t (:family "Hack")))))
-
-
