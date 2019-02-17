@@ -4,9 +4,18 @@
 
 (use-package web-mode
   :ensure t
+
   :init
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-attr-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
-  :hook (web-mode . electric-pair-mode)
+
+  :hook
+  (web-mode . electric-pair-mode)
+  (web-mode . emmet-mode)
+  (web-mode . tern-mode)
+
   :mode 
   ("\\.html$" . web-mode)
   ("\\.php$" . web-mode)
