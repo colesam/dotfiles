@@ -17,6 +17,10 @@
   (linum-relative-on))
 
 
+;; line spacing
+(setq-default line-spacing 8)
+
+
 ;; disable menu and toolbars
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
@@ -33,8 +37,8 @@
 
 
 ;; default fonts
-(add-to-list 'default-frame-alist '(font . "Hack" ))
-(set-face-attribute 'default t :font "Hack" )
+(add-to-list 'default-frame-alist '(font . "Hack-11" ))
+(set-face-attribute 'default t :font "Hack-11" )
 
 
 (provide 'init-style)
