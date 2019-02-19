@@ -12,10 +12,15 @@
   (setq web-mode-code-indent-offset 2)
   (setq web-mode-part-padding 0)
 
+  :config
+  (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
+
   :hook
   (web-mode . electric-pair-mode)
   (web-mode . emmet-mode)
   (web-mode . tern-mode)
+  (web-mode . (lambda()
+		(setq evil-shift-width 2)))
 
   :mode 
   ("\\.html$" . web-mode)
