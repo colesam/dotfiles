@@ -29,7 +29,11 @@
 
 (setq org-todo-keyword-faces
       '(("IN-PROGRESS" . (:foreground "yellow" :weight bold))
-	("READY" . (:foreground "orange" :weight bold))))
+	("FOLLOW-UP" . (:foreground "green" :weight bold))
+	("ON-HOLD" . (:foreground "#7789a2" :weight bold))
+	("READY" . (:foreground "orange" :weight bold))
+	("PRO" . (:foreground "green" :weight bold))
+	("CON" . (:foreground "red" :weight bold))))
 	
 
 (provide 'init-org)
