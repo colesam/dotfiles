@@ -16,6 +16,10 @@
 ;;    ? - show these command bindings
 
 ;; git submodule: https://github.com/abo-abo/ace-window.git 
+
+(use-package "avy"
+			 :ensure t)
+
 (add-to-list 'load-path "~/.emacs.d/plugins/ace-window/")
 
 ; init

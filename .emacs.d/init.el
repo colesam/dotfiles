@@ -42,3 +42,25 @@
 (require 'init-tern)
 (require 'init-company)
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (multi-term avy web-mode use-package solarized-theme scss-mode org-bullets linum-relative key-chord js2-mode evil-org emmet-mode company-tern ace-jump-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-document-title ((t (:family "Hack"))))
+ '(org-level-1 ((t (:family "Hack"))))
+ '(org-level-2 ((t (:family "Hack"))))
+ '(org-level-3 ((t (:family "Hack"))))
+ '(org-level-4 ((t (:family "Hack"))))
+ '(org-level-5 ((t (:family "Hack"))))
+ '(org-level-6 ((t (:family "Hack"))))
+ '(org-level-7 ((t (:family "Hack"))))
+ '(org-level-8 ((t (:family "Hack")))))
