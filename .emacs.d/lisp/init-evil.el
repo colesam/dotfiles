@@ -14,7 +14,7 @@
 
 ;; key bindings
 (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
-(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
+(define-key evil-normal-state-map (kbd "SPC") 'avy-goto-char-timer)
 
 
 (provide 'init-evil)

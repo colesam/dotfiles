@@ -27,9 +27,10 @@
 (require 'init-ace-window)
 (require 'init-multi-term)
 (require 'init-key-chord)
-(require 'init-ace-jump)
+(require 'init-avy)
 (require 'init-org)
 (require 'init-evil)
+(require 'init-dired)
 
 
 ;; Web Development Packages
