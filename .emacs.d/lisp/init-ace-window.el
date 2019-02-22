@@ -24,6 +24,15 @@
 (require 'ace-window)
 ; config
 (global-set-key (kbd "M-o") 'ace-window)
+(defun find-file-ace-window ()
+  "Use ace window to select a window for opening a file from dired."
+  (interactive)
+  (let ((file (dired-get-file-for-visit)))
+    (if (> (length (aw-window-list)) 1)
+        (aw-select "" (lambda (window)
+                        (aw-switch-to-window window)
+                        (find-file file)))
+      (find-file-other-window file))))
 
 
 (provide 'init-ace-window)
