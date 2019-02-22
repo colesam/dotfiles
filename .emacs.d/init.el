@@ -6,6 +6,7 @@
 
 
 (setq debug-on-error t) ; produce backtraces when errors occur
+(global-auto-revert-mode t)
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory)) ; auto load from .emacs.d/lisp directory
 
 
