@@ -25,10 +25,10 @@
 
 
 ;; General Packages
+(require 'init-avy)
 (require 'init-ace-window)
 (require 'init-multi-term)
 (require 'init-key-chord)
-(require 'init-avy)
 (require 'init-org)
 (require 'init-evil)
 (require 'init-dired)

@@ -30,6 +30,7 @@
 (setq org-todo-keyword-faces
       '(("IN-PROGRESS" . (:foreground "yellow" :weight bold))
 	("FOLLOW-UP" . (:foreground "green" :weight bold))
+	("LOW-PRIORITY" . (:foreground "#959595" :weight bold))
 	("ON-HOLD" . (:foreground "#959595" :weight bold))
 	("READY" . (:foreground "orange" :weight bold))
 	("PRO" . (:foreground "green" :weight bold))

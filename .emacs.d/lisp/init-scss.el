@@ -10,6 +10,7 @@
   (setq css-indent-offset 2)
 
   :mode
+  ("\\.vue$" . scss-mode)
   ("\\.scss$" . scss-mode))
 
 
