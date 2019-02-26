@@ -33,6 +33,7 @@
 	("LOW-PRIORITY" . (:foreground "#959595" :weight bold))
 	("ON-HOLD" . (:foreground "#959595" :weight bold))
 	("READY" . (:foreground "orange" :weight bold))
+	("UI-READY" . (:foreground "orange" :weight bold))
 	("PRO" . (:foreground "green" :weight bold))
 	("CON" . (:foreground "red" :weight bold))))
 	
