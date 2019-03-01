@@ -1,26 +1,44 @@
 {
 	"editor.fontFamily": "'Fira Code'",
 	"editor.fontLigatures": true,
-	"editor.fontSize": 12,
+	"editor.fontSize": 11,
 	"editor.lineHeight": 24,
-	"workbench.colorTheme": "Gruvbox Dark (Medium)",
+	"editor.tabSize": 2,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": true,
+	"editor.minimap.enabled": false,
+	"editor.lineNumbers": "relative",
+
 	"explorer.confirmDelete": false,
 	"explorer.confirmDragAndDrop": false,
-	// The number of spaces a tab is equal to. This setting is overriden
-	// based on the file contents when `editor.detectIndentation` is true.
-	"editor.tabSize": 2,
-	// Insert spaces when pressing Tab. This setting is overriden
-	// based on the file contents when `editor.detectIndentation` is true.
-	"editor.insertSpaces": false,
-	// When opening a file, `editor.tabSize` and `editor.insertSpaces`
-	// will be detected based on the file contents. Set to false to keep
-	// the values you've explicitly set, above.
-	"editor.detectIndentation": true,
+
+	"terminal.integrated.fontSize": 11,
+	"terminal.integrated.fontFamily": "'Fira Code'",
+
 	"window.zoomLevel": 1,
 
+	"workbench.colorTheme": "Gruvbox Dark (Medium)",
+	"workbench.activityBar.visible": false,
+	"workbench.editor.tabSizing": "shrink",
+
+	// NORMALIZE COMMENT FONT
+	"editor.tokenColorCustomizations": {
+			"textMateRules": [
+					{ 
+							"scope": [
+									"comment",
+							],
+							"settings": {
+									"fontStyle": "",
+							}
+					}
+			]
+	},
+	
 	// VIM SETTINGS
 	"vim.useSystemClipboard": true,
 	"vim.incsearch": true,
+	"vim.hlsearch": false,
 	"vim.handleKeys": {
 		"C-s": false
 	},
@@ -51,7 +69,7 @@
 	// Vim Easymotion
 	"vim.easymotion": true,
 	"vim.easymotionMarkerFontFamily": "Fira Code",
-	"vim.easymotionMarkerFontSize": 12,
+	"vim.easymotionMarkerFontSize": 11,
 	"vim.easymotionMarkerFontWeight": 700,
 	"vim.easymotionMarkerHeight": 24,
 	"vim.easymotionMarkerWidthPerChar": 8,
@@ -59,4 +77,5 @@
 	"vim.easymotionMarkerBackgroundColor": "#282828",
 	"vim.easymotionMarkerForegroundColorOneChar": "#FF0000",
 	"vim.easymotionMarkerForegroundColorTwoChar": "#FF00B6",
+	"workbench.startupEditor": "newUntitledFile"
 }
