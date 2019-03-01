@@ -1,0 +1,62 @@
+{
+	"editor.fontFamily": "'Fira Code'",
+	"editor.fontLigatures": true,
+	"editor.fontSize": 12,
+	"editor.lineHeight": 24,
+	"workbench.colorTheme": "Gruvbox Dark (Medium)",
+	"explorer.confirmDelete": false,
+	"explorer.confirmDragAndDrop": false,
+	// The number of spaces a tab is equal to. This setting is overriden
+	// based on the file contents when `editor.detectIndentation` is true.
+	"editor.tabSize": 2,
+	// Insert spaces when pressing Tab. This setting is overriden
+	// based on the file contents when `editor.detectIndentation` is true.
+	"editor.insertSpaces": false,
+	// When opening a file, `editor.tabSize` and `editor.insertSpaces`
+	// will be detected based on the file contents. Set to false to keep
+	// the values you've explicitly set, above.
+	"editor.detectIndentation": true,
+	"window.zoomLevel": 1,
+
+	// VIM SETTINGS
+	"vim.useSystemClipboard": true,
+	"vim.incsearch": true,
+	"vim.handleKeys": {
+		"C-s": false
+	},
+	"vim.insertModeKeyBindings": [
+		{
+			"before": [
+				"j",
+				"j"
+			],
+			"after": [
+				"<Esc>"
+			]
+		}
+	],
+	"vim.normalModeKeyBindings": [
+		{
+			"before": [
+				"<space>"
+			],
+			"after": [
+				"<leader>",
+				"<leader>",
+				"s"
+			]
+		}
+	],
+
+	// Vim Easymotion
+	"vim.easymotion": true,
+	"vim.easymotionMarkerFontFamily": "Fira Code",
+	"vim.easymotionMarkerFontSize": 12,
+	"vim.easymotionMarkerFontWeight": 700,
+	"vim.easymotionMarkerHeight": 24,
+	"vim.easymotionMarkerWidthPerChar": 8,
+	"vim.easymotionMarkerYOffset": 0,
+	"vim.easymotionMarkerBackgroundColor": "#282828",
+	"vim.easymotionMarkerForegroundColorOneChar": "#FF0000",
+	"vim.easymotionMarkerForegroundColorTwoChar": "#FF00B6",
+}
