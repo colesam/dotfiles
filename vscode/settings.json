@@ -40,7 +40,8 @@
 	"vim.incsearch": true,
 	"vim.hlsearch": false,
 	"vim.handleKeys": {
-		"C-s": false
+		"C-s": false,
+		"C-b": false
 	},
 	"vim.insertModeKeyBindings": [
 		{
