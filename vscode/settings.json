@@ -34,7 +34,7 @@
 					}
 			]
 	},
-	
+
 	// VIM SETTINGS
 	"vim.useSystemClipboard": true,
 	"vim.incsearch": true,
