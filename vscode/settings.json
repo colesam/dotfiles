@@ -8,6 +8,7 @@
 	"editor.detectIndentation": true,
 	"editor.minimap.enabled": false,
 	"editor.lineNumbers": "relative",
+	"editor.rulers": [100],
 
 	"explorer.confirmDelete": false,
 	"explorer.confirmDragAndDrop": false,
@@ -78,5 +79,7 @@
 	"vim.easymotionMarkerBackgroundColor": "#282828",
 	"vim.easymotionMarkerForegroundColorOneChar": "#FF0000",
 	"vim.easymotionMarkerForegroundColorTwoChar": "#FF00B6",
-	"workbench.startupEditor": "newUntitledFile"
+	"workbench.startupEditor": "newUntitledFile",
+
+	"eslint.autoFixOnSave": true
 }
