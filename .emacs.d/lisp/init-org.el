@@ -28,14 +28,15 @@
       '((sequence "TODO" "IN-PROGRESS" "DONE")))
 
 (setq org-todo-keyword-faces
-      '(("IN-PROGRESS" . (:foreground "yellow" :weight bold))
-	("FOLLOW-UP" . (:foreground "green" :weight bold))
-	("LOW-PRIORITY" . (:foreground "#959595" :weight bold))
-	("ON-HOLD" . (:foreground "#959595" :weight bold))
-	("READY" . (:foreground "orange" :weight bold))
-	("UI-READY" . (:foreground "orange" :weight bold))
-	("PRO" . (:foreground "green" :weight bold))
-	("CON" . (:foreground "red" :weight bold))))
+      '(("TODO" . (:foreground "#73bca4" :weight bold))
+	("IN-PROGRESS" . (:foreground "#ffd116" :weight bold))
+	("FOLLOW-UP" . (:foreground "#a8d11d" :weight bold))
+	("LOW-PRIORITY" . (:foreground "#bdae93" :weight bold))
+	("ON-HOLD" . (:foreground "#bdae93" :weight bold))
+	("READY" . (:foreground "#ff850b" :weight bold))
+	("UI-READY" . (:foreground "#ff850b" :weight bold))
+	("PRO" . (:foreground "#b8bb26" :weight bold))
+	("CON" . (:foreground "#fb4933" :weight bold))))
 	
 
 (provide 'init-org)

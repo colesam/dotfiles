@@ -3,11 +3,10 @@
 
 
 ;; install theme
-(use-package solarized-theme
+(use-package gruvbox-theme
   :ensure t
   :init
-  (setq solarized-scale-org-headlines nil) ;; make all org headlines same size
-  (load-theme 'solarized-dark t))
+  (load-theme 'gruvbox-dark-medium t))
 
 (use-package linum-relative
   :ensure t
