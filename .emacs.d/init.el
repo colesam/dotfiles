@@ -8,6 +8,7 @@
 (setq debug-on-error t) ; produce backtraces when errors occur
 (global-auto-revert-mode t)
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory)) ; auto load from .emacs.d/lisp directory
+(global-set-key (kbd "C-s") 'save-buffer) 
 
 
 ;; Put backup files in own directory
