@@ -81,5 +81,6 @@
 	"vim.easymotionMarkerForegroundColorTwoChar": "#FF00B6",
 	"workbench.startupEditor": "newUntitledFile",
 
-	"eslint.autoFixOnSave": true
+	"eslint.autoFixOnSave": true,
+	"vetur.format.defaultFormatter.html": "prettier"
 }
