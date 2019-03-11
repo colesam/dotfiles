@@ -4,6 +4,7 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+(setq default-directory "~/")
 
 (setq debug-on-error t) ; produce backtraces when errors occur
 (global-auto-revert-mode t)
