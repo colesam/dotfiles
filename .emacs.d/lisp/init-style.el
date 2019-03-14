@@ -5,8 +5,8 @@
 ;; install theme
 (use-package gruvbox-theme
   :ensure t
-  :init
-  (load-theme 'gruvbox-dark-medium t))
+  :config
+  (load-theme 'gruvbox-light-medium t))
 
 (use-package linum-relative
   :ensure t
@@ -36,8 +36,8 @@
 
 
 ;; default fonts
-(add-to-list 'default-frame-alist '(font . "Hack-11" ))
-(set-face-attribute 'default t :font "Hack-11" )
+(add-to-list 'default-frame-alist '(font . "Hack-10" ))
+(set-face-attribute 'default t :font "Hack-10" )
 
 
 (provide 'init-style)

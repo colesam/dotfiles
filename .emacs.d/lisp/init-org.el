@@ -30,9 +30,9 @@
 (setq org-todo-keyword-faces
       '(("TODO" . (:foreground "#73bca4" :weight bold))
 	("IN-PROGRESS" . (:foreground "#ffd116" :weight bold))
-	("FOLLOW-UP" . (:foreground "#a8d11d" :weight bold))
-	("LOW-PRIORITY" . (:foreground "#bdae93" :weight bold))
-	("ON-HOLD" . (:foreground "#bdae93" :weight bold))
+	("FOLLOW-UP" . (:foreground "#7Fb013" :weight bold))
+	("LOW-PRIORITY" . (:foreground "#737373" :weight bold))
+	("ON-HOLD" . (:foreground "#737373" :weight bold))
 	("READY" . (:foreground "#ff850b" :weight bold))
 	("UI-READY" . (:foreground "#ff850b" :weight bold))
 	("PRO" . (:foreground "#b8bb26" :weight bold))
