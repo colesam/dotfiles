@@ -29,11 +29,13 @@
 
 (setq org-todo-keyword-faces
       '(("TODO" . (:foreground "#73bca4" :weight bold))
-	("IN-PROGRESS" . (:foreground "#ffd116" :weight bold))
+	("IN-PROGRESS" . (:foreground "#fabd2f" :weight bold))
 	("FOLLOW-UP" . (:foreground "#7Fb013" :weight bold))
 	("LOW-PRIORITY" . (:foreground "#737373" :weight bold))
 	("ON-HOLD" . (:foreground "#737373" :weight bold))
 	("READY" . (:foreground "#ff850b" :weight bold))
+	("DONE" . (:foreground "#98971a" :weight bold))
+	("DEPLOYED" . (:foreground "#98971a" :weight bold))
 	("UI-READY" . (:foreground "#ff850b" :weight bold))
 	("PRO" . (:foreground "#b8bb26" :weight bold))
 	("CON" . (:foreground "#fb4933" :weight bold))))

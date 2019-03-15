@@ -1,0 +1,5 @@
+imap jj <Esc> 
+nmap <C-s> :w<cr>
+nmap $t :t''<cr>
+nmap $m :m''<cr>
+set incsearch
