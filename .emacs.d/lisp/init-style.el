@@ -6,7 +6,7 @@
 (use-package gruvbox-theme
   :ensure t
   :config
-  (load-theme 'gruvbox-light-medium t))
+  (load-theme 'gruvbox-dark-medium t))
 
 (use-package linum-relative
   :ensure t

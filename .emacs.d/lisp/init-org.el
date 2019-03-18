@@ -28,12 +28,12 @@
       '((sequence "TODO" "IN-PROGRESS" "DONE")))
 
 (setq org-todo-keyword-faces
-      '(("TODO" . (:foreground "#73bca4" :weight bold))
+      '(("TODO" . (:foreground "#83a598" :weight bold))
 	("IN-PROGRESS" . (:foreground "#fabd2f" :weight bold))
-	("FOLLOW-UP" . (:foreground "#7Fb013" :weight bold))
-	("LOW-PRIORITY" . (:foreground "#737373" :weight bold))
-	("ON-HOLD" . (:foreground "#737373" :weight bold))
-	("READY" . (:foreground "#ff850b" :weight bold))
+	("FOLLOW-UP" . (:foreground "#6ebb26" :weight bold))
+	("LOW-PRIORITY" . (:foreground "#a89984" :weight bold))
+	("ON-HOLD" . (:foreground "#a89984" :weight bold))
+	("READY" . (:foreground "#fe8019" :weight bold))
 	("DONE" . (:foreground "#98971a" :weight bold))
 	("DEPLOYED" . (:foreground "#98971a" :weight bold))
 	("UI-READY" . (:foreground "#ff850b" :weight bold))
