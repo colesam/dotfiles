@@ -42,6 +42,11 @@
 (require 'init-js2)
 
 
+;; Rust Packages
+(require 'init-flycheck)
+(require 'init-rust)
+
+
 ;; Auto Completion
 (require 'init-tern)
 (require 'init-company)

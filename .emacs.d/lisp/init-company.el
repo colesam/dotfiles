@@ -7,6 +7,7 @@
 
   :init
   (setq company-idle-delay t)
+  (setq company-tooltip-align-annotations t)
 
   :config
   (global-company-mode t))

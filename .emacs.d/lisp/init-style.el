@@ -30,9 +30,10 @@
 (setq inhibit-splash-screen t)
 
 
-;; line wrap settings
+;; line wrap and line settings
 (global-visual-line-mode 1)
 (global-linum-mode 1)
+(global-hl-line-mode 1)
 
 
 ;; default fonts
