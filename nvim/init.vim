@@ -19,3 +19,5 @@ inoremap jj <Esc>
 cnoremap $t <cr>:t''<cr>
 nnoremap Y y$
 
+" Avoid cached files littering up filesystem
+let g:netrw_home=$XDG_CACHE_HOME . '/vim'
