@@ -16,3 +16,4 @@ export PATH
 # User specific aliases and functions
 alias c="xclip -selection clipboard"
 alias la="ls -la"
+alias vim="nvim"

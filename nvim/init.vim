@@ -3,7 +3,7 @@ filetype plugin indent on
 syntax on
 
 " Colorscheme
-colorscheme base16-woodland
+colorscheme base16-gruvbox-dark-medium
 
 runtime macros/matchit.vim
 
