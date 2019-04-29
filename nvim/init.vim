@@ -1,3 +1,8 @@
+call plug#begin()
+" Typescript syntax highlighting
+Plug 'leafgarland/typescript-vim'
+call plug#end()
+
 " Vimsentials
 set nocompatible
 set autoindent
@@ -8,6 +13,9 @@ set nohlsearch
 set number relativenumber
 filetype indent plugin on
 syntax on
+
+" Default tab settings
+set shiftwidth=4 softtabstop=4 expandtab
 
 " Wildmenu
 set wildmenu
@@ -23,6 +31,9 @@ nnoremap Y y$
 
 " Fuzzy file searching
 set path+=**
+
+" C tags setup
+command! MakeTags !ctags -R .
 
 " Avoid cached files littering up filesystem
 let g:netrw_home=$XDG_CACHE_HOME . '/vim'
