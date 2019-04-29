@@ -1,6 +1,4 @@
 call plug#begin()
-" Typescript syntax highlighting
-Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 " Vimsentials
