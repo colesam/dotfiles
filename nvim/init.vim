@@ -12,7 +12,7 @@ set number relativenumber
 set wildmenu
 
 " Colorscheme
-colorscheme forest-night
+colorscheme gruvbox
 
 " Key mapping
 inoremap jj <Esc>

@@ -47,13 +47,10 @@
 (require 'init-rust)
 
 
-;; Statistics Packages
-(require 'init-ess)
-
-
 ;; Auto Completion
 (require 'init-tern)
 (require 'init-company)
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
