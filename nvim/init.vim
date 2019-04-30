@@ -1,5 +1,9 @@
 call plug#begin()
+Plug 'leafgarland/typescript-vim'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
+
+let g:deoplete#enable_at_startup=1
 
 " Vimsentials
 set nocompatible
