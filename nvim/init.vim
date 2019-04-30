@@ -18,7 +18,7 @@ filetype indent plugin on
 syntax on
 
 " Default tab settings
-set shiftwidth=4 softtabstop=4 expandtab
+set shiftwidth=4 tabstop=4 expandtab
 
 " Wildmenu
 set wildmenu
