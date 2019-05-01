@@ -1,6 +1,8 @@
 call plug#begin()
 Plug 'leafgarland/typescript-vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'leafOfTree/vim-vue-plugin'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 " Auto-pairs settings
