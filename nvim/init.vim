@@ -28,6 +28,7 @@ call plug#end()
 " Vimsentials
 set nocompatible
 set autoindent
+set autoread
 set backspace=indent,eol,start
 set hidden
 set incsearch
@@ -64,6 +65,7 @@ hi! link jsVariableDef          GruvboxFg1
 hi! link jsDestructuringBlock   GruvboxFg1
 hi! link jsObjectShorthandProp  GruvboxFg1
 hi! link jsFuncArgs             GruvboxFg1
+hi! link htmlH2                 GruvboxFg1
 hi! link jsBrackets             GruvboxFg4
 hi! link jsObjectBraces         GruvboxFg4
 hi! link jsFuncBraces           GruvboxFg4
