@@ -1,12 +1,18 @@
 call plug#begin()
+" Gruvbox theme
+Plug 'morhetz/gruvbox'
+
 " Automatic close parens
 Plug 'jiangmiao/auto-pairs'
+
+" Javascript syntax highlighting
+Plug 'pangloss/vim-javascript'
 
 " Typescript syntax highlighting
 Plug 'leafgarland/typescript-vim'
 
 " Vue.js syntax highlighting
-Plug 'leafOfTree/vim-vue-plugin'
+Plug 'posva/vim-vue'
 
 " Web development auto-completion
 Plug 'mattn/emmet-vim'
@@ -27,6 +33,7 @@ set hidden
 set incsearch
 set nohlsearch
 set number relativenumber
+set cursorline
 filetype indent plugin on
 syntax on
 
@@ -41,8 +48,27 @@ set wildignore+=**/node_modules/**
 
 
 " Colorscheme
+set termguicolors
+let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
-
+hi! link javaScript             GruvboxBlue
+hi! link jsExportDefault        GruvboxBlue
+hi! link jsImport               GruvboxBlue
+hi! link jsFrom                 GruvboxBlue
+hi! link jsObjectKey            GruvboxBlue
+hi! link jsObjectProp           GruvboxBlue
+hi! link jsExport               GruvboxRedBold
+hi! link jsObjectFuncName       GruvboxBlueBold
+hi! link jsFuncCall             GruvboxBlueBold
+hi! link jsVariableDef          GruvboxFg1
+hi! link jsDestructuringBlock   GruvboxFg1
+hi! link jsObjectShorthandProp  GruvboxFg1
+hi! link jsFuncArgs             GruvboxFg1
+hi! link jsBrackets             GruvboxFg4
+hi! link jsObjectBraces         GruvboxFg4
+hi! link jsFuncBraces           GruvboxFg4
+hi! link Normal                 GruvboxFg4
+hi! link Noise                  GruvboxFg4
 
 " Key mapping
 inoremap jj <Esc>
@@ -77,3 +103,17 @@ nmap <silent> <leader>dj <Plug>(coc-implementation)
 
 " Avoid cached files littering up filesystem
 let g:netrw_home=$XDG_CACHE_HOME . '/vim'
+
+
+" Functions
+function! SynGroup()                                                            
+    let l:s = synID(line('.'), col('.'), 1)                                       
+    echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+endfun
+
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
