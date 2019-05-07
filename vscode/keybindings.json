@@ -1,19 +1,19 @@
 // Place your key bindings in this file to overwrite the defaults
 [
 	{
-		"key": "ctrl+h",
+		"key": "ctrl+a ctrl+h",
 		"command": "workbench.action.navigateLeft"
 	},
 	{
-		"key": "ctrl+l",
+		"key": "ctrl+a ctrl+l",
 		"command": "workbench.action.navigateRight"
 	},
 	{
-		"key": "ctrl+k",
+		"key": "ctrl+a ctrl+k",
 		"command": "workbench.action.navigateUp"
 	},
 	{
-		"key": "ctrl+j",
+		"key": "ctrl+a ctrl+j",
 		"command": "workbench.action.navigateDown"
 	},
 	{

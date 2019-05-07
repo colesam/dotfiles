@@ -9,6 +9,9 @@
 	"editor.minimap.enabled": false,
 	"editor.lineNumbers": "relative",
 	"editor.rulers": [100],
+	"editor.tabCompletion": "on",
+	"editor.snippetSuggestions": "inline",
+	"editor.formatOnSave": true,
 
 	"explorer.confirmDelete": false,
 	"explorer.confirmDragAndDrop": false,
@@ -19,8 +22,6 @@
 	"window.zoomLevel": 1,
 	"workbench.activityBar.visible": false,
 	"workbench.editor.tabSizing": "shrink",
-	"editor.tabCompletion": "on",
-	"editor.snippetSuggestions": "inline",
 
 	// NORMALIZE COMMENT FONT
 	"editor.tokenColorCustomizations": {
@@ -91,5 +92,6 @@
 
 	"eslint.autoFixOnSave": true,
 	"vetur.format.defaultFormatter.html": "prettier",
-	"workbench.colorTheme": "Gruvbox Dark Hard"
+	"workbench.colorTheme": "Gruvbox Dark Hard",
+	"json.format.enable": false
 }
