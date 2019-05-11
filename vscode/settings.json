@@ -1,4 +1,6 @@
 {
+	"workbench.settings.editor": "json",
+
 	"editor.fontFamily": "'Hack'",
 	"editor.fontLigatures": true,
 	"editor.fontSize": 11,
