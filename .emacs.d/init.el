@@ -25,3 +25,4 @@
 (require 'init-org)
 (require 'init-evil)
 (require 'init-dired)
+(require 'init-haskell)
