@@ -12,15 +12,15 @@
 ;; org-mode fonts
 (custom-theme-set-faces
    'user
-   `(org-level-1 ((t (:family "Hack"))))
-   `(org-level-2 ((t (:family "Hack"))))
-   `(org-level-3 ((t (:family "Hack"))))
-   `(org-level-4 ((t (:family "Hack"))))
-   `(org-level-5 ((t (:family "Hack"))))
-   `(org-level-6 ((t (:family "Hack"))))
-   `(org-level-7 ((t (:family "Hack"))))
-   `(org-level-8 ((t (:family "Hack"))))
-   `(org-document-title ((t (:family "Hack")))))
+   `(org-level-1 ((t (:family "Source Code Pro Semibold-10"))))
+   `(org-level-2 ((t (:family "Source Code Pro Semibold-10"))))
+   `(org-level-3 ((t (:family "Source Code Pro Semibold-10"))))
+   `(org-level-4 ((t (:family "Source Code Pro Semibold-10"))))
+   `(org-level-5 ((t (:family "Source Code Pro Semibold-10"))))
+   `(org-level-6 ((t (:family "Source Code Pro Semibold-10"))))
+   `(org-level-7 ((t (:family "Source Code Pro Semibold-10"))))
+   `(org-level-8 ((t (:family "Source Code Pro Semibold-10"))))
+   `(org-document-title ((t (:family "Source Code Pro Semibold-10")))))
 
 
 ;; org-mode todo keywords and keyword faces
@@ -30,6 +30,7 @@
 (setq org-todo-keyword-faces
       '(("TODO" . (:foreground "#83a598" :weight bold))
 	("IN-PROGRESS" . (:foreground "#fabd2f" :weight bold))
+	("STARTED" . (:foreground "#fabd2f" :weight bold))
 	("FOLLOW-UP" . (:foreground "#6ebb26" :weight bold))
 	("LOW-PRIORITY" . (:foreground "#a89984" :weight bold))
 	("ON-HOLD" . (:foreground "#a89984" :weight bold))

@@ -37,8 +37,8 @@
 
 
 ;; default fonts
-(add-to-list 'default-frame-alist '(font . "Hack-10" ))
-(set-face-attribute 'default t :font "Hack-10" )
+(add-to-list 'default-frame-alist '(font . "Source Code Pro Semibold-10" ))
+(set-face-attribute 'default t :font "Source Code Pro Semibold-10" )
 
 
 (provide 'init-style)
